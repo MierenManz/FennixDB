@@ -2,7 +2,7 @@ use super::key::Key;
 
 pub struct TableHead {
     row_size: usize,
-    keys: Vec<Key>,
+    collumn_keys: Vec<Key>,
 }
 
 impl TableHead {
@@ -15,7 +15,7 @@ impl TableHead {
 
         Self {
             row_size: total_size,
-            keys,
+            collumn_keys: keys,
         }
     }
 
@@ -25,7 +25,7 @@ impl TableHead {
     }
 
     #[inline(always)]
-    pub fn get_keys(&self) -> &[Key] {
-        &self.keys
+    pub fn get_collumn_keys(&self) -> &[Key] {
+        &self.collumn_keys
     }
 }

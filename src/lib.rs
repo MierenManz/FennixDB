@@ -1,7 +1,8 @@
 // pub mod parser;
+pub mod database;
 mod errors;
-mod schemes;
 mod types;
+mod util;
 
 #[cfg(test)]
 mod tests {

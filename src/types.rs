@@ -10,5 +10,5 @@ pub enum DataTypes {
     Uint64,
     Float,
     Float64,
-    VarChar(usize),
+    VarChar(u64),
 }

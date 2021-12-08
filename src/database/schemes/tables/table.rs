@@ -1,11 +1,12 @@
-use super::super::super::errors::InsertionError;
+use super::super::super::super::errors::InsertionError;
 use super::key::Key;
 use super::row::Row;
 use super::table_head::TableHead;
 
 pub struct Table {
     head: TableHead,
-    rows: Vec<Row>,
+    // Vec<(offset, Row)>
+    rows: Vec<(usize, Row)>,
 }
 
 impl Table {
