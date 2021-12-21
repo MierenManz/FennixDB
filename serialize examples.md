@@ -20,29 +20,29 @@ Example: DataTypes::VarChar(10) => [9 0 0 0 0 0 0 0 10]
 Example: DataTypes::Int8 => [0]
 ```
 
-## Serialize Vec<u8>
+## Serialize Vec<u8> / Vec<char>
 
 ```rs
 Struct Vec<u8>
 
 Example: [
-    34 (Indicates Vec<u8>)
+    86 (Indicates Vec<u8>)
     0 0 0 0 0 0 0 10 (Length of the Vector)
     'h' 'e' 'l' 'l' 'o' 'w' 'o' 'r' 'l' 'd' (Data of the Vector)
 ]
 ```
 
-## Serialize Key
+## Serialize usize and u64
+Convert to LE bytes with a length of 8
+
+## Serialize String
 
 ```rs
-Struct Key {
-    datatype DataTypes
-    name Vec<u8>
-}
-```
-Example:\
-    75 (Indicates Key)\
-    Check [Serialize DataType](#serialize-datatypes)\
-    Check [Serialize Vec<u8>](#serialize-vec<u8>) (Does not need byte 34 as identifier. Only length and data)
+Struct String
 
-## Serialize
+Example: [
+    34 (Indicates String)
+    0 0 0 0 0 0 0 10 (Length of the String)
+    'h' 'e' 'l' 'l' 'o' 'w' 'o' 'r' 'l' 'd' (Data of the String)
+]
+```
